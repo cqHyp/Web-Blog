@@ -4,7 +4,9 @@
       <h1>blog name</h1>
     </div>
     <div class="navbar">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav ">
+        <li><a href="#">navbar</a></li>
+        <li><a href="#">navbar</a></li>
         <li><a href="#">navbar</a></li>
       </ul>
     </div>
@@ -66,7 +68,51 @@
 
 </script>
 <style>
+  h3{
+    font-size: 15px;
+    color: gray;
+  }
   .v-header{
-    background: cornflowerblue;
+    background: #333333;
+    color: #fff;
+  }
+  .blogName{
+    height: 150px;
+    width: 100%;
+    text-align: center;
+  }
+  .navbar{
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+  .search{
+    height: 80px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+  }
+  .navbar-form{
+    margin: auto;
+  }
+  .recentArticle{
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  .recentComment{
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  .articleArchive{
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  .articleSort{
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  .features{
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
   }
 </style>
