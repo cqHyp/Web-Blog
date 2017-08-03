@@ -18,10 +18,13 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
     <button class="btn btn-success" @click="btn__click()">bootstrap</button>
+    <v-bottom></v-bottom>
   </div>
+
 </template>
 
 <script>
+  import bottom from 'components/Bottom/copyright';
 export default {
   name: 'hello',
   data () {
@@ -33,6 +36,9 @@ export default {
     btn__click: function () {
       alert('jquery Test!');
     }
+  },
+  components: {
+    'v-bottom': bottom
   }
 };
 </script>
@@ -56,4 +62,9 @@ li {
 a {
   color: #42b983;
 }
+  .hello{
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+  }
 </style>

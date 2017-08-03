@@ -1,6 +1,6 @@
 # blog
 
-> myblog
+> myblog cooperate with Church @ChurchTao
 
 ## Build Setup
 

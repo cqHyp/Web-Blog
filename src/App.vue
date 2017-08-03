@@ -1,16 +1,33 @@
 <template>
   <div id="app">
-    <img src="./common/img/gakki.jpg"/>
-    <router-view></router-view>
+    <v-header class="header"></v-header>
+    <router-view class="content"></router-view>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-};
+  import header from 'components/header/header';
+
+  export default {
+    name: 'app',
+    components: {
+      'v-header': header
+    }
+  };
 </script>
 
 <style>
-
+  #app{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    background: whitesmoke;
+  }
+  .header{
+    width: 25%;
+  }
+  .content{
+    width: 75%;
+  }
 </style>
