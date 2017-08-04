@@ -2,7 +2,7 @@
   <div>
     <div class="article">
       <div class="article__title">
-        <h1 class="title">article__title</h1>
+        <h1 class="article__title-text">article__title</h1>
       </div>
       <div class="article__subtitle">
         <span>time</span>
@@ -37,20 +37,21 @@
     display: flex;
     flex-direction: column;
     padding: 80px 90px;
+    background: white;
   }
   .article__title{
     text-align: center;
   }
-  .title{
-    margin: 0;
-    padding: 0;
+  .article__title-text{
+    margin-top: 0;
+    color: #555555;
   }
   .article__subtitle{
     text-align: center;
   }
   .article__content{
     width: 100%;
-    height: 500px;
+    height: 1500px;
     background: powderblue;
   }
 

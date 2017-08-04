@@ -26,7 +26,6 @@
   }
   .header{
     width: 25%;
-
   }
   .content{
     width: 75%;

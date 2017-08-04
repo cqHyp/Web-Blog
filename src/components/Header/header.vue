@@ -5,9 +5,9 @@
     </div>
     <div class="navbar">
       <ul class="nav navbar-nav ">
-        <li><a href="#">navbar</a></li>
-        <li><a href="#">navbar</a></li>
-        <li><a href="#">navbar</a></li>
+        <li><a href="#" class="navbar_text">navbar</a></li>
+        <li><a href="#" class="navbar_text">navbar</a></li>
+        <li><a href="#" class="navbar_text">navbar</a></li>
       </ul>
     </div>
     <div class="search">
@@ -67,9 +67,13 @@
 
 </script>
 <style>
-  a{
+  a,a:enabled{
     color: white;
-    text-underline: none;
+    text-decoration: none;
+  }
+  a:hover,a:active,a:link{
+    color: gray;
+    text-decoration: none;
   }
   h3{
     font-size: 12px;
@@ -93,6 +97,12 @@
     border-top: 1px solid rgba(255,255,255,0.2);
     border-radius: 0;
     margin-bottom: 0;
+  }
+  .navbar_text{
+    color: white;
+  }
+  .navbar_text:hover{
+    color: #333333;
   }
   .search{
     height: 80px;
