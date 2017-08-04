@@ -1,7 +1,7 @@
 <template>
   <div class="v-header">
     <div class="blogName">
-      <h1>blog name</h1>
+      <router-link to="/" class="name">blog name</router-link>
     </div>
     <div class="navbar">
       <ul class="nav navbar-nav ">
@@ -15,10 +15,9 @@
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
       </form>
     </div>
-    <div class="recentArticle">
+    <div class="headerStyle recentArticle">
       <aside>
         <h3>近期文章</h3>
         <li><a>article</a></li>
@@ -28,7 +27,7 @@
         <li><a>article</a></li>
       </aside>
     </div>
-    <div class="recentComment">
+    <div class="headerStyle recentComment">
       <aside>
         <h3>近期评论</h3>
         <li><a>comment</a></li>
@@ -38,7 +37,7 @@
         <li><a>comment</a></li>
       </aside>
     </div>
-    <div class="articleArchive">
+    <div class="headerStyle articleArchive">
       <aside>
         <h3>文章归档</h3>
         <li><a>articleArchive</a></li>
@@ -46,7 +45,7 @@
         <li><a>articleArchive</a></li>
       </aside>
     </div>
-    <div class="articleSort">
+    <div class="headerStyle articleSort">
       <aside>
         <h3>分类目录</h3>
         <li><a>articleSort</a></li>
@@ -54,7 +53,7 @@
         <li><a>articleSort</a></li>
       </aside>
     </div>
-    <div class="features">
+    <div class="headerStyle features">
       <aside>
         <h3>功能</h3>
         <li><a>features</a></li>
@@ -68,9 +67,14 @@
 
 </script>
 <style>
+  a{
+    color: white;
+    text-underline: none;
+  }
   h3{
-    font-size: 15px;
+    font-size: 12px;
     color: gray;
+    margin: 10px 0;
   }
   .v-header{
     background: #333333;
@@ -80,6 +84,9 @@
     height: 150px;
     width: 100%;
     text-align: center;
+  }
+  .name{
+    font-size: 42px;
   }
   .navbar{
     border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -95,24 +102,23 @@
   .navbar-form{
     margin: auto;
   }
-  .recentArticle{
-    padding: 10px 20px;
+  .headerStyle{
+    padding: 10px 20px 20px;
     border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  .recentArticle{
+
   }
   .recentComment{
-    padding: 10px 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+
   }
   .articleArchive{
-    padding: 10px 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+
   }
   .articleSort{
-    padding: 10px 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+
   }
   .features{
-    padding: 10px 20px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+
   }
 </style>

@@ -10,6 +10,6 @@
   .bottom{
     width: 100%;
     height: 100px;
-    margin: auto;
+    background: whitesmoke;
   }
 </style>
