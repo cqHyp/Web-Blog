@@ -7,17 +7,36 @@
       <img :src="face_url" class="comment__face"/>
       <div class="comment__content">
         <div class="comment__top">
-          <h1 class="comment__name">ibm rack</h1>
+          <span class="comment__name">ibm rack</span>
           <span class="comment__time">七月 27, 2017 7:53 上午</span>
         </div>
-        <div class="comment__mid"></div>
-        <div class="comment__end"></div>
+        <div class="comment__mid">
+          <p>内容</p>
+        </div>
+        <div class="comment__end">
+          <a class="comment__res-btn">回复</a>
+        </div>
       </div>
     </div>
     <div class="comment__response">
       <div class="comment__response-title">发表评论</div>
       <form class="comment__form">
-        comment__form
+        <div>
+          <p>电子邮件地址不会被公开。 必填项已用*标注</p>
+          <input type="text" class="comment__response-body"/>
+        </div>
+        <div>
+          <h2>姓名 *</h2>
+          <input type="text" class="comment__response-name"/>
+        </div>
+        <div>
+          <h2>电子邮件 *</h2>
+          <input type="text" class="comment__response-email"/>
+        </div>
+        <div>
+          <h2>站点</h2>
+          <input type="text" class="comment__response-point"/>
+        </div>
       </form>
     </div>
   </div>
@@ -36,10 +55,53 @@
   .comment{
     background: white;
   }
+  .comment__title{
+    color: gray;
+    font-size: 14px;
+  }
 
-
+  .comment__body{
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
   .comment__face{
-    width: 80px;
-    height: 80px;
+    width: 82px;
+    height: 82px;
+  }
+  .comment__content{
+    margin-left: 40px;
+    width: 100%;
+  }
+  .comment__top{
+    position: relative;
+    width: 100%;
+  }
+  .comment__name{
+    font-size: 18px;
+    font-weight: 700;
+    color: #3699DC;
+  }
+  .comment__time{
+    position: absolute;
+    right: 0;
+    top: 0;
+    vertical-align: text-top;
+  }
+
+  .comment__mid{
+    padding: 10px;
+  }
+
+  .comment__res-btn{
+    color: #3699DC;
+  }
+
+  .comment__response{
+    margin-top: 50px;
+  }
+  .comment__response-body{
+    width: 100%;
+    height: 150px;
   }
 </style>

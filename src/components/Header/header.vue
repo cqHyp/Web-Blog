@@ -63,8 +63,8 @@
     </div>
     <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
       <div class="modal-dialog" role="document">
-        <div class="modal-header" style="background: white;text-align: center">
-          <img src="../../common/img/hat.png"/>
+        <div class="modal-header" style="background: white;text-align: center;">
+          <!--<img src="../../common/img/hat.png"/>-->
         </div>
         <div class="modal-content">
           <div class="login__name">
@@ -77,7 +77,7 @@
           </div>
           <div class="login__label">
             <label>
-              <input type="checkbox">  记住我的登录信息
+              <input type="checkbox">记住我的登录信息
             </label>
             <a type="button" class="btn btn-primary">登陆</a>
           </div>
