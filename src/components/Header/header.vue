@@ -56,20 +56,57 @@
     <div class="headerStyle features">
       <aside>
         <h3>功能</h3>
-        <li><a>features</a></li>
+        <li><a data-toggle="modal" data-target=".bs-example-modal-sm">login</a></li>
         <li><a>features</a></li>
         <li><a>features</a></li>
       </aside>
     </div>
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-header" style="background: white;text-align: center">
+          <img src="../../common/img/hat.png"/>
+        </div>
+        <div class="modal-content">
+          <div class="login__name">
+            <h3>用户名</h3>
+            <input type="text"/>
+          </div>
+          <div class="login__pwd">
+            <h3>密码</h3>
+            <input type="password"/>
+          </div>
+          <div class="login__label">
+            <label>
+              <input type="checkbox">  记住我的登录信息
+            </label>
+            <a type="button" class="btn btn-primary">登陆</a>
+          </div>
+          <a>忘记密码？</a>
+          <a>回到{{}}</a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
-
+  export default {
+    data() {
+      return {
+        logShow: false
+      };
+    },
+    methods: {
+      showLogin: function () {
+        this.logShow = true;
+      }
+    }
+  };
 </script>
 <style>
   a,a:enabled{
     color: white;
     text-decoration: none;
+    cursor: pointer;
   }
   a:hover,a:active,a:link{
     color: gray;
@@ -82,7 +119,7 @@
   }
   .v-header{
     background: #333333;
-    color: #fff;
+    position: relative;
   }
   .blogName{
     height: 150px;
@@ -114,6 +151,7 @@
   }
   .headerStyle{
     padding: 10px 20px 20px;
+    color: #fff;
     border-bottom: 1px solid rgba(255,255,255,0.2);
   }
   .recentArticle{
@@ -130,5 +168,21 @@
   }
   .features{
 
+  }
+
+  .modal-header{
+    border: none;
+  }
+  .modal-content{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 0;
+  }
+  .login__name,.login__pwd{
+    margin: 0 auto;
+  }
+  .login__label{
+    margin: 10px auto;
   }
 </style>
