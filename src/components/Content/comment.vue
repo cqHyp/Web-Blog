@@ -23,11 +23,11 @@
       <form class="comment__form">
         <div>
           <p>电子邮件地址不会被公开。 必填项已用*标注</p>
-          <input type="text" class="comment__response-body"/>
+          <textarea type="" class="comment__response-body"/>
         </div>
         <div>
-          <h2>姓名 *</h2>
-          <input type="text" class="comment__response-name"/>
+          <h2>姓名 * {{this.username}}</h2>
+          <input type="text" class="comment__response-name" name="username"/>
         </div>
         <div>
           <h2>电子邮件 *</h2>
@@ -46,8 +46,12 @@
     data(){
       return {
         comment_num: 1,
-        face_url: 'http://cqhpoldi.com/Gakki.jpg'
+        face_url: 'http://cqhpoldi.com/Gakki.jpg',
+        username: ''
       };
+    },
+    mounted() {
+      this.username = this.$store.state.user_name;
     }
   };
 </script>
@@ -100,8 +104,39 @@
   .comment__response{
     margin-top: 50px;
   }
+  .comment__response h2{
+    font-size: 18px;
+    font-weight: 600;
+  }
   .comment__response-body{
     width: 100%;
-    height: 150px;
+    height: 120px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  .comment__response-name{
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+    padding: 0 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+  }
+  .comment__response-email{
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+    padding: 0 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+  }
+  .comment__response-point{
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+    padding: 0 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
   }
 </style>

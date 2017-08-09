@@ -69,7 +69,7 @@
         <div class="modal-content">
           <div class="login__name">
             <h3>用户名</h3>
-            <input type="text"/>
+            <input type="text" name="username" v-model="username" v-on:change="userNameChange" class="form-control" :placeholder="username"/>
           </div>
           <div class="login__pwd">
             <h3>密码</h3>
@@ -79,25 +79,38 @@
             <label>
               <input type="checkbox">记住我的登录信息
             </label>
-            <a type="button" class="btn btn-primary">登陆</a>
+            <a type="button" @click="submit" class="btn btn-primary">登陆</a>
           </div>
           <a>忘记密码？</a>
-          <a>回到{{}}</a>
+          <a>回到{{ this.guessCity }}</a>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+  import {cityGuess} from '../../service/getData';
   export default {
+    props: ['placeholder'],
     data() {
       return {
-        logShow: false
+        guessCity: '',
+        guessCityid: '',
+        username: ''
       };
     },
+    mounted() {
+      cityGuess().then(res => {
+        this.guessCity = res.name;
+        this.guessCityid = res.id;
+      });
+    },
     methods: {
-      showLogin: function () {
-        this.logShow = true;
+      userNameChange() {
+        this.$store.state.user_name = this.username;
+      },
+      submit() {
+        this.$store.commit('showUserName');
       }
     }
   };
