@@ -4,6 +4,10 @@
 
 ## Build Setup
 
+git clone https://github.com/cqHyp/Web-Blog.git
+
+cd Web-Blog
+
 ``` bash
 # install dependencies
 npm install

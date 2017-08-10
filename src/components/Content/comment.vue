@@ -23,10 +23,10 @@
       <form class="comment__form">
         <div>
           <p>电子邮件地址不会被公开。 必填项已用*标注</p>
-          <textarea type="" class="comment__response-body"/>
+          <textarea class="comment__response-body"></textarea>
         </div>
         <div>
-          <h2>姓名 * {{this.username}}</h2>
+          <h2>姓名 *</h2>
           <input type="text" class="comment__response-name" name="username"/>
         </div>
         <div>
@@ -37,6 +37,7 @@
           <h2>站点</h2>
           <input type="text" class="comment__response-point"/>
         </div>
+        <button class="btn btn-primary commentSubmit">发表评论</button>
       </form>
     </div>
   </div>
@@ -108,12 +109,18 @@
     font-size: 18px;
     font-weight: 600;
   }
+  .comment__response-title{
+    margin: 0 0 20px;
+    line-height: 20px;
+    font-size: 16px;
+  }
   .comment__response-body{
     width: 100%;
     height: 120px;
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 5px;
     padding: 5px 10px;
+    resize: vertical;
   }
   .comment__response-name{
     width: 100%;
@@ -138,5 +145,8 @@
     padding: 0 10px;
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 5px;
+  }
+  .commentSubmit{
+    margin-top: 20px;
   }
 </style>

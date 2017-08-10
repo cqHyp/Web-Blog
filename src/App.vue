@@ -22,7 +22,6 @@
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    background: whitesmoke;
   }
   .header{
     width: 25%;

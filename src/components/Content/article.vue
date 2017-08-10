@@ -2,7 +2,7 @@
   <div>
     <div class="article">
       <div class="article__title">
-        <h1 class="article__title-text">article__title</h1>
+        <h1 class="article__title-text">{{ article.title }}</h1>
       </div>
       <div class="article__subtitle">
         <span>time</span>
@@ -29,6 +29,13 @@
       'v-bottom': bottom,
       'nav-Links': navLinks,
       'comment': comment
+    },
+    data() {
+      return {
+        article: {
+          title: 'Length of Last Word–LeetCode#58'
+        }
+      };
     }
   };
 </script>
@@ -43,6 +50,7 @@
     text-align: center;
   }
   .article__title-text{
+    font-size: 40px;
     margin-top: 0;
     color: #555555;
   }

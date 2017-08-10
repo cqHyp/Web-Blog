@@ -4,7 +4,7 @@
       <router-link to="/" class="name">blog name</router-link>
     </div>
     <div class="navbar">
-      <ul class="nav navbar-nav ">
+      <ul class="nav navbar-nav">
         <li><a href="#" class="navbar_text">navbar</a></li>
         <li><a href="#" class="navbar_text">navbar</a></li>
         <li><a href="#" class="navbar_text">navbar</a></li>
@@ -17,14 +17,10 @@
         </div>
       </form>
     </div>
-    <div class="headerStyle recentArticle">
+    <div class="headerStyle recentArticle" v-if="recentArticles">
       <aside>
         <h3>近期文章</h3>
-        <li><a>article</a></li>
-        <li><a>article</a></li>
-        <li><a>article</a></li>
-        <li><a>article</a></li>
-        <li><a>article</a></li>
+        <li v-for="item in recentArticles"><a>{{ item.name }}</a></li>
       </aside>
     </div>
     <div class="headerStyle recentComment">
@@ -57,32 +53,38 @@
       <aside>
         <h3>功能</h3>
         <li><a data-toggle="modal" data-target=".bs-example-modal-sm">login</a></li>
-        <li><a>features</a></li>
+        <li><router-link to="/manage">features</router-link></li>
         <li><a>features</a></li>
       </aside>
     </div>
     <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-header" style="background: white;text-align: center;">
-          <!--<img src="../../common/img/hat.png"/>-->
+          <img src="../../common/img/hat.png"/>
         </div>
         <div class="modal-content">
-          <div class="login__name">
-            <h3>用户名</h3>
-            <input type="text" name="username" v-model="username" v-on:change="userNameChange" class="form-control" :placeholder="username"/>
+          <div class="login-content">
+            <div class="login__name">
+              <h3>用户名</h3>
+              <input type="text" name="username" v-model="username" v-on:change="userNameChange" class="form-control" :placeholder="username"/>
+            </div>
+            <div class="login__pwd" >
+              <h3>密码</h3>
+              <input type="password" class="form-control" name="password"/>
+            </div>
+            <div class="login__label">
+              <label>
+                <input type="checkbox"><span class="checkbox-rememberMe">记住我的登录信息</span>
+              </label>
+              <a type="button" @click="submit" class="btn btn-primary btn-login">登陆</a>
+            </div>
+            <div class="forgetPassword-wrapper">
+              <a class="forgetPassword">忘记密码？</a>
+            </div>
+            <div class="backTo-wrapper">
+              <a class="backTo">← 回到 {{ this.guessCity }}</a>
+            </div>
           </div>
-          <div class="login__pwd">
-            <h3>密码</h3>
-            <input type="password"/>
-          </div>
-          <div class="login__label">
-            <label>
-              <input type="checkbox">记住我的登录信息
-            </label>
-            <a type="button" @click="submit" class="btn btn-primary">登陆</a>
-          </div>
-          <a>忘记密码？</a>
-          <a>回到{{ this.guessCity }}</a>
         </div>
       </div>
     </div>
@@ -96,7 +98,23 @@
       return {
         guessCity: '',
         guessCityid: '',
-        username: ''
+        username: '',
+        recentArticles: [{
+          name: 'Length of Last Word–LeetCode#58',
+          id: 5
+        }, {
+          name: 'Reverse String–LeetCode#344',
+          id: 4
+        }, {
+          name: 'Distribute Candies–LeetCode#575',
+          id: 3
+        }, {
+          name: 'Fizz Buzz–LeetCode#412',
+          id: 2
+        }, {
+          name: 'Reverse Words in a String–LeetCode#151',
+          id: 1
+        }]
       };
     },
     mounted() {
@@ -137,10 +155,11 @@
   .blogName{
     height: 150px;
     width: 100%;
-    text-align: center;
+    display: flex;
   }
   .name{
     font-size: 42px;
+    margin: auto;
   }
   .navbar{
     border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -148,11 +167,8 @@
     border-radius: 0;
     margin-bottom: 0;
   }
-  .navbar_text{
-    color: white;
-  }
-  .navbar_text:hover{
-    color: #333333;
+  .nav>li>a:focus, .nav>li>a:hover{
+    background: none;
   }
   .search{
     height: 80px;
@@ -192,10 +208,42 @@
     border: none;
     border-radius: 0;
   }
+  .login-content{
+    width: 300px;
+    margin: 0 auto;
+  }
   .login__name,.login__pwd{
     margin: 0 auto;
   }
   .login__label{
     margin: 10px auto;
+    font-size: 0;
+    position: relative;
+  }
+  .checkbox-rememberMe{
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .btn-login{
+    position: absolute;
+    right: 0;
+  }
+  .forgetPassword-wrapper{
+    margin: 5px 0;
+  }
+  .forgetPassword{
+    color: gray;
+  }
+  .backTo{
+    text-align: center;
+    color: gray;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    text-decoration: none;
+  }
+  .backTo-wrapper{
+    margin: 5px 0;
   }
 </style>
