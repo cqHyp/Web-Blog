@@ -1,9 +1,10 @@
 <template>
   <div class="v-header">
+    <v-adminHeader></v-adminHeader>
     <div class="blogName">
       <router-link to="/" class="name">blog name</router-link>
     </div>
-    <div class="navbar">
+    <div class="navbar nav-indexZ">
       <ul class="nav navbar-nav">
         <li><a href="#" class="navbar_text">navbar</a></li>
         <li><a href="#" class="navbar_text">navbar</a></li>
@@ -59,7 +60,7 @@
     </div>
     <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
       <div class="modal-dialog" role="document">
-        <div class="modal-header" style="background: white;text-align: center;">
+        <div class="modal-header">
           <img src="../../common/img/hat.png"/>
         </div>
         <div class="modal-content">
@@ -92,6 +93,7 @@
 </template>
 <script>
   import {cityGuess} from '../../service/getData';
+  import adminHeader from '../Admin/adminHeader';
   export default {
     props: ['placeholder'],
     data() {
@@ -130,6 +132,9 @@
       submit() {
         this.$store.commit('showUserName');
       }
+    },
+    components: {
+      'v-adminHeader': adminHeader
     }
   };
 </script>
@@ -170,6 +175,8 @@
   .nav>li>a:focus, .nav>li>a:hover{
     background: none;
   }
+  .nav-indexZ{
+  }
   .search{
     height: 80px;
     border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -201,6 +208,8 @@
 
   .modal-header{
     border: none;
+    background: white;
+    text-align: center;
   }
   .modal-content{
     display: flex;
